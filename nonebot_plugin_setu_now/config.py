@@ -15,7 +15,6 @@ class Config(BaseModel, extra=Extra.ignore):
     setu_dav_url: Optional[str] = None
     setu_dav_username: Optional[str] = None
     setu_dav_password: Optional[str] = None
-    setu_withdraw: Optional[int] = None
     setu_reverse_proxy: str = "i.pixiv.re"
     setu_size: str = "regular"
     setu_api_url: str = "https://api.lolicon.app/setu/v2"
