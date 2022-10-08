@@ -23,7 +23,6 @@ from nonebot.adapters.onebot.v11 import (
 from .utils import send_forward_msg
 from .config import Config
 from .models import Setu, SetuNotFindError
-from .withdraw import add_withdraw_job
 from .cd_manager import add_cd, cd_msg, check_cd, remove_cd
 from .data_source import SetuLoader
 
@@ -101,7 +100,6 @@ async def _(bot: Bot, event: MessageEvent, state: T_State = State()):
         for msg in msg_list:
             try:
                 msg_info = await setu_matcher.send(msg, at_sender=True)
-                add_withdraw_job(bot, **msg_info)
                 await sleep(2)
 
             except ActionFailed as e:
